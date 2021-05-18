@@ -1,0 +1,42 @@
+{% extends "Agranov_etal_2018/css.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p id = "round_numbers"><ins>Round {{ player.round_number}} of {{ Constants.num_rounds}}</ins></p>
+    <p class="center">
+        {% if player.type == 'Red' %}
+            Your type is <span class="red">{{ player.type }}</span>
+        {% else %}
+            Your type is <span class="blue">{{ player.type }}</span>
+        {% endif %}
+    </p>
+    <p>
+        In your group, the results of the initial survey were
+        {{ group.poll_red }} <span class="red">Red</span> vote(s), {{ group.poll_blue }} <span class="blue">Blue</span> vote(s), and {{ group.poll_abstain }} Abstain(s). <br>
+    </p>
+
+    <p>
+        <center>
+            Your guess for the group composition: <br>
+            {% formfield player.guess_red %}
+            {% formfield player.guess_blue %}
+            (These should add up to the group size.)
+            <br><br>
+            Your guess for the final vote: <br> 
+            {% formfield player.guess_vote_red %}
+            {% formfield player.guess_vote_blue %}
+            (These do not have to add up to the group size.)
+        </center>
+
+    </p>
+
+    {% next_button %}
+    <br>
+    {% include Constants.instructions_template %}
+{% endblock %}
+
+

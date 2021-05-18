@@ -1,0 +1,62 @@
+{% extends "Agranov_etal_2018_NoPolls/css.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+        <p id = "round_numbers"><ins>Round {{ player.round_number}} of {{ Constants.num_rounds}}</ins></p>
+    
+        <p class="center">
+            {% if player.type == 'Red' %}
+                Your type is <span class="red">Red</span><br>
+            {% else %}
+                Your type is <span class="blue">Blue</span><br>
+            {% endif %}
+
+            {% if player.vote == 'Vote Red' %}
+                Your vote was <span class="red">Red</span><br>
+            {% else %}
+                Your vote was <span class="blue">Blue</span><br>
+            {% endif %}
+        </p>
+
+        <p class="center">
+            Your group had {{ group.vote_red }} <span class="red">Red</span> vote(s) and {{ group.vote_blue }} <span class="blue">Blue</span> vote(s)
+        </p>
+        <p class="center">
+            {% if group.winner == 'Red' %}
+                This means the Group Decision is <span class="red">Red</span> <br>
+            {% else %}
+                This means the Group Decision is <span class="blue">Blue</span> <br>
+            {% endif %}
+        </p>
+
+        <p class="center">
+            Your Payoff: <b>{{ player.vote_payoff }}</b> <br>
+            Your Voting Cost (0 if you did not vote): <b>{{ group.cost }}</b> <br>
+            Your Net Payoff: <b>{{ player.payoff }}</b> <br>
+            Your Cumulative payoff: <b>{{ participant.payoff }}</b>
+        </p>
+        <p class="center">
+            {% if player.round_number == Constants.num_rounds %}
+                {% if player.guess_paid_question == "real_types" %}
+                    Your guess of the group composition in <b>Round {{ player.guess_paid_round}}</b> was chosen to determine your guessing bonus. <br>
+                    Your guess was <b>{{ a }}</b>. <br>
+                {% else %}
+                    Your guess of the number of red and blue votes in <b>Round {{ player.guess_paid_round}}</b> was chosen to determine your guessing bonus. <br>
+                    Your guess was <b>{{ a }}</b>. <br>
+                {% endif %}            
+                Therefore, your total payoff: <b>{{ player.total_payoff }}</b>
+            {% else %}
+            {% endif %}
+        </p>
+
+        {% next_button %}
+        <br>
+    {% include Constants.instructions_template %}
+{% endblock %}
+
+
+

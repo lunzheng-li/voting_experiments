@@ -1,0 +1,127 @@
+{% load otree %}
+
+<div class="card bg-light">
+    <div class="card-body">
+
+    <h3>
+        Instructions
+    </h3>
+    <p class="justify">
+        The experiment consists of <b>20 periods</b>. In each period of the experiment, you will be part of a randomly selected group of <b>9 subjects</b>. In each period, the computer will pick one of two jars (both being equally likely) for your group:
+        <ul>
+            <li> The <span class="red">red</span> jar contains two <span class="red">red</span> balls and one <span class="blue">blue</span> ball.</li>
+            <li> The <span class="blue">blue</span> jar contains two <span class="blue">blue</span> balls and one <span class="red">red</span> ball.</li>
+        </ul>
+        You will <b>NOT</b> know which jar was chosen for your group.
+    </p>
+
+    <p class="justify">
+        In each period, we will randomly draw a ball (with replacement) from the selected jar for each of you. The draw’s color is your <b>type</b>. You will <b>NOT</b> know the types of other members of your group and others will not know your type. All you know is that others’ types are drawn from <b>the same jar</b> as yours. Each person in your group will have the option of voting for one of the two colors or abstaining. That is, each of you will have to choose between the following three options: 
+        <ul>
+            <li>Abstain</li>
+            <li>Vote Blue</li>
+            <li>Vote Red</li>
+        </ul>
+    </p>
+
+    <p class="justify">
+        You will incur a cost if you vote for Blue or Red: <br> 
+        <ul>
+            <li>In 10 periods the voting cost = 25 points</li>
+            <li>In 10 periods the voting cost = 50 points</li>
+        </ul>
+        The voting cost will be indicated on your screen and is the same for all members of your group. <br>
+        To summarize, after observing <b>your type</b> and <b>your cost</b>, you will have to choose between: 
+        <ul>
+            <li>Abstain (free)</li>
+            <li>Blue (costly)</li>
+            <li>Red (costly)</li>
+        </ul>
+    </p>
+
+    <p class="justify">
+        In order to assist you with your choice, we will conduct a <b>survey</b> in each period. That is, you will make two sequential decisions: <br>
+        <b>Survey Stage</b>: You will declare your intended choice (Abstain, Blue, or Red). <br>
+        <b>Actual Choice</b>: After observing the intended choices in your group, you will commit to a choice between
+        <ul>
+            <li>Abstain (free)</li>
+            <li>Blue (costly)</li>
+            <li>Red (costly)</li>
+        </ul>
+    </p>
+    
+    <p class="justify">
+        The color receiving the <b>majority</b> of votes will constitute the <b>group’s choice</b>. In case of a tie, we will randomly pick the <span class="red">red</span> or <span class="blue">blue</span> color as the <b>group’s choice</b> (both colors being equally likely). Your earnings depend on: 
+        <ol>
+            <li>your group’s choice</li>
+            <li>your type</li>
+            <li>your voting costs</li>
+        </ol>
+    </p>
+
+    <h3>
+        Your Payoffs
+    </h3>
+    Your payoffs are determined according to:
+    <p>
+        <table>
+            <tr>
+                <td>If The Group Decision Is:</td>
+                <td>And Your Type Is:</td>
+                <td>Your Payoff Will Be:</td>
+            </tr>
+            <tr>
+                <td><span class="red">red</span></td>
+                <td><span class="red">red</span></td>
+                <td><b>200</b></td>
+            </tr>
+            <tr>
+                <td><span class="red">red</span></td>
+                <td><span class="blue">blue</span></td>
+                <td><b>0</b></td>
+            </tr>
+            <tr>
+                <td><span class="blue">blue</span></td>
+                <td><span class="red">red</span></td>
+                <td><b>0</b></td>
+            </tr>
+            <tr>
+                <td><span class="blue">blue</span></td>
+                <td><span class="blue">blue</span></td>
+                <td><b>200</b></td>
+            </tr>
+        </table>
+    </p>
+    <p>
+        If you vote Red or Blue, your voting costs will be subtracted from that period’s payoff.
+    </p>
+    
+
+    <h3>
+         Guesses
+    </h3>
+    <p class="justify">
+        Prior to making your actual choice (between abstain, blue, and red, and after observing the survey’s results, you will be asked to <b>guess</b>: <br>
+        <ul>
+            <li>The composition of your group (number of reds, number of blues, summing up to 9)</li>
+            <li>The number of red and blue votes in your group (including your own, possibly summing up to <9)</li>
+        </ul>
+        At the end of the experiment, we will randomly pick one of your guesses. If it is correct, we will give you a <b>$10</b> bonus. 
+    </p>
+
+    <h3>
+         Feedback
+    </h3>
+    <p class="justify">
+        When each member of your group has made a selection or chose to abstain, the group’s choice is calculated. You will see the selections made in your group and your resulting payoff (Screen 5).
+    </p>
+
+    <h3>
+        Your Earnings
+    </h3>
+    <p class="justify">
+        In the experiment your earnings are denoted by points. Each point is worth 1 cent, so <b>200 points = $2</b>. You will be paid at the end of the experiment the total amount you have earned in all of the periods and possibly your guessing bonus. You will also receive $5 for coming to the lab. You need not tell any other participant how much you earned.
+    </p>
+    </div>
+</div>
+

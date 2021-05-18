@@ -1,0 +1,36 @@
+{% extends "Agranov_etal_2018/css.html" %}
+{% load otree static %}
+
+{% block title %}
+ 
+{% endblock %}
+
+{% block content %}
+        <h3>Welcome to SSEL</h3>
+        <p class="justify">
+            Welcome and thank you for participating in today’s experiment. <br><br>            
+            Place all of your personal belongings away, so we can have your complete attention. It is very important that you do not touch the computer until you are instructed to do so. When you are told to use the computer, please use it only as instructed. In particular, do <u>not</u> attempt to browse the web or use programs unrelated to the experiment. Raise your hand if you need a pencil.
+        </p>
+
+        <h3>
+            The Experiment
+        </h3>
+        <p class="justify">
+            The experiment you will be participating in today is an experiment in decision making. At the end of the experiment you will be paid for your participation in cash. Each of you may earn different amounts. The amount you earn depends on your decisions, chance, and on others’ decisions. <br><br>
+
+            You will be using the computer for the entire experiment. DO NOT socialize or talk during the experiment.
+        </p>
+
+        <br>
+        {% include Constants.instructions_template %}
+        <br>
+        <h3>Let the Experiment Begin!</h3>
+        <p class="justify">
+            To ensure your privacy and that of others in the experiment, please pull out the dividers as far as they will go. <br><br>
+            If there are no questions, we will now begin the experiment.
+        </p>    
+
+    {% next_button %}
+{% endblock %}
+
+

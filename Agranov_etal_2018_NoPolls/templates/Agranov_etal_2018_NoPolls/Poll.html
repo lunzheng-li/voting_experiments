@@ -1,0 +1,56 @@
+{% extends "Agranov_etal_2018_NoPolls/css.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p id = "round_numbers"><ins>Round {{ player.round_number}} of {{ Constants.num_rounds}}</ins></p>
+    <p class="center">
+        {% if player.type == 'Red' %}
+            Your type is <span class="red">{{ player.type }}</span>
+        {% else %}
+            Your type is <span class="blue">{{ player.type }}</span>
+        {% endif %}
+    </p>
+    <p>
+        <table>
+            <tr>
+                <td>If The Group Decision Is:</td>
+                <td>And Your Type Is:</td>
+                <td>Your Payoff Will Be:</td>
+            </tr>
+            <tr>
+                <td><span class="red">red</span></td>
+                <td><span class="red">red</span></td>
+                <td><b>200</b></td>
+            </tr>
+            <tr>
+                <td><span class="red">red</span></td>
+                <td><span class="blue">blue</span></td>
+                <td><b>0</b></td>
+            </tr>
+            <tr>
+                <td><span class="blue">blue</span></td>
+                <td><span class="red">red</span></td>
+                <td><b>0</b></td>
+            </tr>
+            <tr>
+                <td><span class="blue">blue</span></td>
+                <td><span class="blue">blue</span></td>
+                <td><b>200</b></td>
+            </tr>
+        </table>
+    </p>
+    <p class="center">
+        Your Cost of Voting is {{ group.cost }}
+    </p>
+
+
+    {% next_button %}
+    <br>
+    {% include Constants.instructions_template %}
+{% endblock %}
+
+
