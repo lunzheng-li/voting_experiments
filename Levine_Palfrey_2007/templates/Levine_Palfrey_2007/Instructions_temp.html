@@ -1,0 +1,106 @@
+{% load otree static %}
+<style type="text/css">
+        .center{
+            text-align: center;
+        }
+        .justify{
+            text-align: justify;
+        }
+        figure {
+            border: 1px #cccccc solid;
+            /*padding: 4px;*/
+            margin: auto;
+        }
+
+        figcaption {
+            background-color: black;
+            color: white;
+            font-style: italic;
+            /*padding: 2px;*/
+            text-align: center;
+        }
+
+</style>
+
+<div class="card bg-light">
+    <div class="card-body">
+
+    <h3 class="center">
+        Instructions
+    </h3>
+    <p class="justify">
+        There are <u>{{ Constants.players_per_group }} participants</u> in today's experiment. You will participate <u>two paid sessions of 3 rounds each</u>. <br><br>
+
+        In each round of the experiment, You will be randomly assigned to one of two groups the <b>ALPHA group</b> or the <b>BETA group</b> (<em>Note that you will not necessarily be in the same group during each round</em>).
+        <ul>
+             <li>In Session 1 (round 1 to {{ Constants.end_s1_round }}), the <b>ALPHA group</b> has <u>{{ Constants.N_A }} members</u> and the <b>BETA group</b> has <u>{{ Constants.N_B }} members</u>;</li>
+             <li>In Session 2 (round {{ Constants.start_s2_round }} to {{ Constants.num_rounds }}), the <b>ALPHA group</b> has <u>{{ Constants.N_A_s2 }} members</u> and the <b>BETA group</b> has <u>{{ Constants.N_B_s2 }} members</u>.</li>
+         </ul> 
+
+        You will need to choose between <b>X</b> and <b>Y</b>. Your earnings depend on: 
+        <ol>
+            <li>Your choice - If your choice is <b>Y</b>, you will get a <b>Y-bonus</b>;</li>
+            <li>Which group has the most members choosing <b>X</b>.</li>
+        </ol>
+        See the following "Y-bonus" and "Your Earning" sections for details regarding your payment. 
+    </p>
+    
+    <h4>Y-bonus</h4>
+    <p class="justify">
+        The amount of your <b>Y-bonus</b> is assigned randomly by the computer. In any given round you have an equal chance of being assigned any Y-bonus</b> between <b>0 and 55 points</b>. 
+        <br><br>
+        Your Y-bonus in each round does not depend on your Y-bonus or decisions in previous rounds, or on the Y-bonuses and decisions of other participants. Since Y-bonuses are assigned separately for each participant, different participants will typically have different Y-bonuses.
+        <br><br> 
+        While you are told your own Y-bonus, you are never told the Y-bonus of other participants. You only know that each of the other participants has a Y-bonus that is some number between 0 and 55. 
+    </p>
+
+
+    <h4>Your Earning</h4>
+    <p class="justify">
+        Your earnings are computed in the following way. Suppose you choose <b>X</b>:
+    </p> 
+        <ul>
+            <li>If your group has more members choosing <b>X</b> than the other group, then you will earn 105 points;</li>
+            <li>If both groups have the same number of members choosing <b>X</b>, then you will earn 55 points;</li>
+            <li>If the other group has more members choosing <b>X</b> than your group, then you will earn 5 points.</li>
+        </ul>
+
+        Alternatively, suppose you choose <b>Y</b>: 
+        <ul>
+            <li>If your group has more members choosing <b>X</b> than the other group, then you will earn 105 points plus your <b>Y-bonus</b>;</li>
+            <li>If both groups have the same number of members choosing <b>X</b>, then you will earn 55 points plus your <b>Y-bonus</b>;</li>
+            <li>If the other group has more members choosing <b>X</b> than your group, then you will earn 5 points plus your <b>Y-bonus</b>.</li>
+        </ul>
+
+         At the end of each round, you will see a "Result" screen summarizing the amount that you earned in the round.
+        <br><br>
+         At the end of the last paid session, you will be paid the sum of what you have earned in the two paid sessions, plus the show-up fee of <b>&#36;5.00</b>. Everyone will be paid in private, and you are under no obligation to tell others how much you earned. Your earnings during the experiment are denominated in <b>POINTS</b>. Your <b>DOLLAR</b> earnings are determined by multiplying your earnings in <b>POINTS</b> by a conversion rate. In this experiment, the conversion rate is <b>0.0037</b>, meaning that <b>100 POINTS</b> is worth <b>37 cents</b>. 
+        
+    </p>
+
+
+    <h4>Sample Screen</h4>
+    <p class="justify">
+        You will mainly see two screens in each round of the experiment - a "Your Choice" screen and a "Result" screen. <br><br>  
+        <em>Fig.1</em> below shows you what the "Your Choice" screen looks like for a member of the ALPHA group. It tells you what your Y-bonus is. In rounds rather than the first one, the bottom of the screen contains a history panel which will be updated to reflect the history of your past choices. <br><br>
+        <em>Fig.2</em> is sample "Result" screen which shows the number of X and Y choices, reminds you about your group and summrise your total points in the round.
+    </p>
+           
+    <center>
+        <figure>
+            <img src="{% static 'Levine_Palfrey_2007/choice.png' %}"/>
+             <figcaption>Fig.1 - Sample "Your Choice" screen</figcaption>
+        </figure>
+        <br>
+        <figure>
+            <img src="{% static 'Levine_Palfrey_2007/result.png' %}"/>
+             <figcaption>Fig.2 - Sample "Result" screen</figcaption>
+        </figure>      
+    </center>
+    <br>
+    <p class="justify">
+
+   
+    </div>
+</div>
+

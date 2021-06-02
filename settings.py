@@ -19,6 +19,12 @@ SESSION_CONFIGS = [
         num_demo_participants=3,
         app_sequence=['Agranov_etal_2018_PerfectPolls']
     ),
+    dict(
+        name='Levine_voting',
+        display_name="Levine and Palfrey (2007)",
+        num_demo_participants=3,
+        app_sequence=['Levine_Palfrey_2007']
+    ),
 ]
 
 ROOMS = [

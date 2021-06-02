@@ -1,0 +1,89 @@
+{% extends "Levine_Palfrey_2007/css.html" %}
+{% load otree static %}
+
+{% block title %}
+<!--     {% if player.round_number < Constants.start_s2_round  %}
+        Session 1
+    {% else %}
+        Session 2
+    {% endif %} -->
+{% endblock %}
+
+{% block content %}
+    <p id = "round_numbers"><ins>Round {{ player.round_number}} of {{ Constants.num_rounds}}</ins></p>
+    {% if player.round_number == Constants.start_s2_round %}
+    <p>
+        <b>Starting from this round, Session 2 begins. In Session 2, the ALPHA group has <u>{{ Constants.N_A_s2 }} members</u> and the BETA group has <u>{{ Constants.N_B_s2 }} members</u>.</b>
+    </p>
+    {% endif %}
+
+    <h3>Your Choice</h3>
+    <center>
+        {% if player.round_number < Constants.start_s2_round  %}
+            <p>
+            This is <b>Session 1</b>, and the <b>ALPHA group</b> has <u>{{ Constants.N_A }} members</u> and the <b>BETA group</b> has <u>{{ Constants.N_B }} members</u> 
+            </p>
+        {% else %}
+            <p>
+            This is <b>Session 2</b>, and the <b>ALPHA group</b> has <u>{{ Constants.N_A_s2 }} members</u> and the <b>BETA group</b> has <u>{{ Constants.N_B_s2 }} members</u> 
+            </p>
+        {% endif %}
+
+        <p>
+            You are assigned to group <b>{{ player.label }}</b> <br><br>
+            Your Y-bonus is <b>{{ player.y_bonus }}</b>
+        </p>
+        {% formfields %}
+    </center>
+
+
+    {% if player.round_number > 1 %}
+        <h4><ins>History</ins></h4>
+        <br>
+            <table id="history">
+              <tr>
+                <th>Session</th>
+                <th>Round</th>
+                <th>Your Group</th>
+                <th>Your Y-bonus</th>
+                <th>Your Decision</th>
+                <th>Group with more 'X'</th>                
+              </tr>
+            </table>
+    {% endif %}
+    <br>
+    <script>
+        var roundNumber=js_vars.currentRound;
+        var labelsPrev=js_vars.labels_prev;
+        var votesPrev=js_vars.votes_prev;
+        var y_bonussPrev=js_vars.y_bonuss_prev;
+        var winnerPrev=js_vars.winner_prev;
+
+        for (var i = 0; i < roundNumber-1; i++) {
+            var table = document.getElementById("history");
+            var row = table.insertRow(1);
+            var cell0 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            var cell2 = row.insertCell(2);
+            var cell3 = row.insertCell(3);
+            var cell4 = row.insertCell(4);
+            var cell5 = row.insertCell(5);
+            if (i <= roundNumber/2) {
+            cell0.innerHTML = 'Session1'
+            } else {
+            cell0.innerHTML = 'Session2'
+            }
+
+            cell1.innerHTML = i+1
+            cell2.innerHTML = labelsPrev[i]
+            cell3.innerHTML = y_bonussPrev[i]
+            cell4.innerHTML = votesPrev[i]
+            cell5.innerHTML = winnerPrev[i]
+        }
+    </script>
+
+    {% next_button %}
+    <br>
+    {% include Constants.instructions_template %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "Levine_Palfrey_2007/css.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p id = "round_numbers"><ins>Round {{ player.round_number}} of {{ Constants.num_rounds}}</ins></p>
+
+    <h3>Result</h3>
+    <table>
+        <tr>
+            <th>Group</th>
+            <th>No. of X Choices</th>
+            <th>No. of Y Choices</th>
+        </tr>
+        <tr>
+            <td>ALPHA</td>
+            <td>{{ group.vote_x_A }}</td>
+            <td>{{ group.vote_y_A }}</td>
+        </tr>
+        <tr>
+            <td>BETA</td>
+            <td>{{ group.vote_x_B }}</td>
+            <td>{{ group.vote_y_B }}</td>
+        </tr>
+    </table>
+    <br>
+    {% if group.winner == 'Draw' %}
+        <p> 
+            Two groups have the <b>same</b> number of members choosing X, thus both groups have the same payoff of <b>55 points</b>.
+        </p>
+    {% else %}
+        <p>
+            Group <b> {{ group.winner }} </b> has more members choosing X, and you belong to group <b>{{ player.label }}</b>.
+        </p>
+    {% endif %}
+
+
+    {% if player.vote == 'X' %}
+        <p> 
+            Since <b>your choice</b> was <b>{{ player.vote }}</b>, your total payoff in this round is <b>{{ player.payoff }}</b>. 
+        </p>
+    {% else %}
+        <p>
+            Since <b>your choice</b> was <b>{{ player.vote }}</b>, and the Y-bonus is <b>{{ player.y_bonus }} points</b>, your total payoff in this round is <b>{{ player.payoff }}</b>. 
+        </p>
+    {% endif %}
+    
+    {% next_button %}
+    <br>
+    {% include Constants.instructions_template %}
+{% endblock %}
+
+

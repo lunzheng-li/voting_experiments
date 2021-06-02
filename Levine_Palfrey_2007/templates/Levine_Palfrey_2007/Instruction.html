@@ -1,0 +1,21 @@
+{% extends "Levine_Palfrey_2007/css.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <br>
+    {% include Constants.instructions_template %}
+    <br>
+    </p class="justify">
+        If you have any questions at this time, please raise your hand and ask your question so that everyone in the room may hear it. If there are no questions, we will now begin the experiment.
+    </p> 
+    <p>
+    <b>Note that the instructions will remain on your screen for future reference.</b>
+    </p>
+    {% next_button %}
+{% endblock %}
+
+

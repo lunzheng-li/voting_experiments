@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block app_styles %}
+
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-weight:normal;
+            text-align: center; 
+        }
+        th {
+            font-weight: bolder;
+        }
+        table {
+            table-layout: auto;
+            width:75%;
+            margin: auto;
+        }
+        .center{
+            text-align: center;
+        }
+        .justify{
+            text-align: justify;
+        }
+        #round_numbers{
+            text-align: left
+        }
+
+    </style>
+
+{% endblock %}
+
