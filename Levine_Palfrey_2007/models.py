@@ -65,7 +65,7 @@ class Subsession(BaseSubsession):
             random.shuffle(labels_shuffled)
             random.shuffle(labels_s2_shuffled)
             for p in g.get_players():
-                if self.round_number < Constants.start_s2_rounds:
+                if self.round_number < Constants.start_s2_round:
                     p.label = labels_shuffled[0]
                     del labels_shuffled[0]
                 else:
